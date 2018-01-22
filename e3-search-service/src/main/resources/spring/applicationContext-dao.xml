@@ -10,7 +10,7 @@
 
 	<!-- 加载配置文件 -->
 	<context:property-placeholder location="classpath:mybatis/*.properties" />
-	<context:component-scan base-package="cn.e3mall.mapper"></context:component-scan>
+	<context:component-scan base-package="cn.e3mall.search.mapper,cn.e3mall.search.dao"></context:component-scan>
 	<!-- 数据库连接池 -->
 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="url" value="${jdbc.url}" />

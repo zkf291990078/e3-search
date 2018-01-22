@@ -15,9 +15,6 @@ public class SearchServiceImpl implements SearchService {
 	@Autowired
 	private SearchDao searchDao;
 	
-	@Value("${DEFAULT_FIELD}")
-	private String DEFAULT_FIELD;
-	
 	@Override
 	public SearchResult search(String keyWord, int page, int rows) throws Exception {
 		//创建一个SolrQuery对象
@@ -29,7 +26,7 @@ public class SearchServiceImpl implements SearchService {
 		//设置rows
 		query.setRows(rows);
 		//设置默认搜索域
-		query.set("df", DEFAULT_FIELD);
+		query.set("df", "item_title");
 		//设置高亮显示
 		query.setHighlight(true);
 		query.addHighlightField("item_title");

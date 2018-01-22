@@ -17,7 +17,7 @@ public class SolrjTest {
 	public void addDocument() throws Exception {
 		// 第一步：把solrJ的jar包添加到工程中。
 		// 第二步：创建一个SolrServer，使用HttpSolrServer创建对象。
-		SolrServer solrServer = new HttpSolrServer("http://192.168.1.105:8080/solr/collection2");
+		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/collection1");
 		// 第三步：创建一个文档对象SolrInputDocument对象。
 		SolrInputDocument document = new SolrInputDocument();
 		// 第四步：向文档中添加域。必须有id域，域的名称必须在schema.xml中定义。
@@ -33,7 +33,7 @@ public class SolrjTest {
 	@Test
 	public void deleteDocumentById() throws Exception {
 		// 第一步：创建一个SolrServer对象。
-		SolrServer solrServer = new HttpSolrServer("http://192.168.1.105:8080/solr/collection2");
+		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/");
 		// 第二步：调用SolrServer对象的根据id删除的方法。
 		solrServer.deleteById("test001");
 		// 第三步：提交。
@@ -43,7 +43,7 @@ public class SolrjTest {
 	@Test
 	public void queryDocument() throws Exception {
 		// 第一步：创建一个SolrServer对象
-		SolrServer solrServer = new HttpSolrServer("http://192.168.1.105:8080/solr/collection2");
+		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/collection1");
 		// 第二步：创建一个SolrQuery对象。
 		SolrQuery query = new SolrQuery();
 		// 第三步：向SolrQuery中添加查询条件、过滤条件。。。
@@ -64,7 +64,7 @@ public class SolrjTest {
 	@Test
 	public void queryDocumentWithHighLighting() throws Exception {
 		// 第一步：创建一个SolrServer对象
-		SolrServer solrServer = new HttpSolrServer("http://192.168.1.105:8080/solr/collection2");
+		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/collection1");
 		// 第二步：创建一个SolrQuery对象。
 		SolrQuery query = new SolrQuery();
 		// 第三步：向SolrQuery中添加查询条件、过滤条件。。。
